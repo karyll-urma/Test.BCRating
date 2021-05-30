@@ -12,3 +12,4 @@
 
 #User/specific files
 *.user
+/Test.BuggyCarsRating/bin/Debug/net5.0
