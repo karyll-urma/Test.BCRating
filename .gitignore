@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Test.BuggyCarsRating/bin/Debug/netcoreapp3.1
+/.vs/Test.BuggyCarsRating/v16/TestStore/0
+/Test.BuggyCarsRating/obj
+/.vs/Test.BuggyCarsRating/v16
+
+#Specflow
+*.feature.cs
+
+#User/specific files
+*.user
