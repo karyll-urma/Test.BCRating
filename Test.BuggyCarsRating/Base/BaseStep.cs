@@ -12,7 +12,7 @@ namespace Test.BuggyCarsRating.Base
     public abstract class BaseStep
     {
         public DriverContext _driverContext;
-        //public HomePage _homePage;
+        public HomePage _homePage;
         public LoginPage _loginPage;
         public RegisterPage _registerPage;
         public CodeHelper _codeHelper;
@@ -24,6 +24,7 @@ namespace Test.BuggyCarsRating.Base
             _driverContext = driverContext;
             _loginPage = new LoginPage(_driverContext);
             _registerPage = new RegisterPage(_driverContext);
+            _homePage = new HomePage(_driverContext);
             _codeHelper = new CodeHelper(_driverContext);
             
             this._scenarioContext = scenarioContext;

@@ -17,7 +17,7 @@ namespace Test.BuggyCarsRating.Pages
         IWebElement TextRegister => _driverContext.Driver.FindElement(By.XPath("//h2[text() = 'Register with Buggy Cars Rating']"));
         IWebElement BtnRegisterRegPg => _driverContext.Driver.FindElement(By.XPath("//button[text() = 'Register']"));
         IWebElement BtnCancelRegPg => _driverContext.Driver.FindElement(By.XPath("//a[text() = 'Cancel']"));
-        
+
 
         // Validate 'Register with Buggy Cars Rating' page is displayed
         public bool IsRegisterPageDisplayed()
@@ -28,31 +28,31 @@ namespace Test.BuggyCarsRating.Pages
         // Enter Login, First Name, Last Name
         public void EnterLoginFirstNameLastName(string Login, string FirstName, string LastName)
         {
-            _customControlHelper.InputText("username", Login);
-            _customControlHelper.InputText("firstName", FirstName);
-            _customControlHelper.InputText("lastName", LastName);
+            _customControlHelper.InputText("username", "id", Login);
+            _customControlHelper.InputText("firstName", "id", FirstName);
+            _customControlHelper.InputText("lastName", "id", LastName);
         }
 
         // Enter Login, First Name, Last Name(Work Around)
         public void EnterLoginFirstNameLastNameWorkAround(string Login, string FirstName, string LastName)
         {
-            _customControlHelper.InputTextWorkAround("username", Login);
-            _customControlHelper.InputTextWorkAround("firstName", FirstName);
-            _customControlHelper.InputTextWorkAround("lastName", LastName);
+            _customControlHelper.InputTextWorkAround("username", "id", Login);
+            _customControlHelper.InputTextWorkAround("firstName", "id", FirstName);
+            _customControlHelper.InputTextWorkAround("lastName", "id", LastName);
         }
 
         // Enter Password, Confirm Password
         public void EnterPasswordConfirmPassword(string Password, string ConfirmPassword)
         {
-            _customControlHelper.InputText("password", Password);
-            _customControlHelper.InputText("confirmPassword", ConfirmPassword);
+            _customControlHelper.InputText("password", "id", Password);
+            _customControlHelper.InputText("confirmPassword", "id", ConfirmPassword);
         }
 
         // Enter Password, Confirm Password(Work Around)
         public void EnterPasswordConfirmPasswordWorkAround(string Password, string ConfirmPassword)
         {
-            _customControlHelper.InputTextWorkAround("password", Password);
-            _customControlHelper.InputTextWorkAround("confirmPassword", ConfirmPassword);
+            _customControlHelper.InputTextWorkAround("password", "id", Password);
+            _customControlHelper.InputTextWorkAround("confirmPassword", "id", ConfirmPassword);
         }
 
         // Click Register

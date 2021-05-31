@@ -7,9 +7,9 @@ using Test.BuggyCarsRating.Contexts;
 
 namespace Test.BuggyCarsRating.Helpers
 {
-    public class CodeHelper : BaseHelper
+    public class CodeHelper:BaseHelper
     {
-        public CodeHelper(DriverContext driverContext) : base(driverContext)
+        public CodeHelper(DriverContext driverContext):base(driverContext)
         {
 
         }
@@ -39,6 +39,22 @@ namespace Test.BuggyCarsRating.Helpers
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
+        // Get Input data - generate random string if string contains "RandomString-"
+        public string GetDataInput(string data,string randomType)
+        {
+            string dataOverride = "";
 
+            //overide Login(for regression)
+            if (data.Contains("RandomString-"))
+            {
+                int length = Int32.Parse(data.Split('-')[1]);
+                dataOverride = RandomString(randomType, length);
+            }
+            else
+            {
+                dataOverride = data;
+            }
+            return dataOverride;
+        }
     }
 }

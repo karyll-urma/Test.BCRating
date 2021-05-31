@@ -14,28 +14,27 @@ namespace Test.BuggyCarsRating.Pages
 
         }
 
-        IWebElement TextLogin => _driverContext.Driver.FindElement(By.Name("login"));
-        IWebElement TextPassword => _driverContext.Driver.FindElement(By.Name("password"));
-        IWebElement BtnLogin => _driverContext.Driver.FindElement(By.XPath("//button[text() = 'Login']"));
-        IWebElement BtnRegister => _driverContext.Driver.FindElement(By.XPath("//a[text() = 'Register']"));
+        IWebElement btnLogin => _driverContext.Driver.FindElement(By.XPath("//button[text() = 'Login']"));
+        IWebElement btnRegister => _driverContext.Driver.FindElement(By.XPath("//a[text() = 'Register']"));
+
 
         // Enter Login and Password
         public void EnterLoginAndPassword(string Login, string Password)
         {
-            TextLogin.SendKeys(Login);
-            TextPassword.SendKeys(Password);
+            _customControlHelper.InputText("login", "name", Login);
+            _customControlHelper.InputText("password", "name", Password);
         }
 
         // Click Login
         public void ClickLogin()
         {
-            BtnLogin.Click();
+            btnLogin.Click();
         }
 
         // Click Register
         public void ClickRegister()
         {
-            BtnRegister.Click();
+            btnRegister.Click();
         }
     }
 }

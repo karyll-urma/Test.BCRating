@@ -10,11 +10,12 @@ namespace Test.BuggyCarsRating.Base
     {
         public DriverContext _driverContext;
         public CustomControlHelper _customControlHelper;
-
+        public CodeHelper _codeHelper;
         public BasePage(DriverContext driverContext)
         {
             _driverContext = driverContext;
             _customControlHelper = new CustomControlHelper(_driverContext);
+            _codeHelper = new CodeHelper(_driverContext);
         }
     }
 }

@@ -49,9 +49,8 @@ Scenario Outline: S02_Registration_EmptyCredentials_WorkAround
 		| TC01_EmptyLogin           |                 | 1FN0915   | 1LN0915  | Abcdefgh1! | Abcdefgh1!      | Login is required      |
 		| TC02_EmptyFirstName       | RandomString-10 |           | 1LN0915  | Abcdefgh1! | Abcdefgh1!      | First Name is required |
 		| TC03_EmptyLastName        | RandomString-10 | 1FN0915   |          | Abcdefgh1! | Abcdefgh1!      | Last Name is required  |
-		| TC04_EmptyPassword        | RandomString-10 | 1FN0915   | 1LN0915  |            | Abcdefgh1!      | Password is required  |
+		| TC04_EmptyPassword        | RandomString-10 | 1FN0915   | 1LN0915  |            | Abcdefgh1!      | Password is required   |
 		| TC05_EmptyConfirmPassword | RandomString-10 | 1FN0915   | 1LN0915  | Abcdefgh1! |                 | Passwords do not match |
-
 
 Scenario Outline: S03_Registration_PasswordMinCriteriaNotMet
 	Given User navigate to application
@@ -69,19 +68,15 @@ Scenario Outline: S03_Registration_PasswordMinCriteriaNotMet
 		| TC03_PasswordWithoutSpecialChar | RandomString-10 | 1FN0915   | 1LN0915  | Abcdefg1   | Abcdefg1        | Password did not conform with policy: Password must have symbol characters  |
 		| TC04_PasswordWithoutNumeric     | RandomString-10 | 1FN0915   | 1LN0915  | Abcdefg!   | Abcdefg!        | Password did not conform with policy: Password must have numeric characters |
 
-Scenario Outline: S04_Registration_SameUserTwice
+Scenario: S04_Registration_SameUserTwice
 	Given User navigate to application
 	When User select Register button
 	And User enter user credential
-		| Login   | FirstName   | LastName   | Password   | ConfirmPassword   |
-		| <Login> | <FirstName> | <LastName> | <Password> | <ConfirmPassword> |
+		| Login           | FirstName | LastName | Password   | ConfirmPassword |
+		| RandomString-10 | 1FN0915   | 1LN0915  | Abcdefgh1! | Abcdefgh1!      |
 	And User click register button
-	Then User can see the message '<Message>'
+	Then User can see the message 'Registration is successful'
 	When User select Register button
 	And User enter the same user
 	And User click register button
-	Then User can see the message '<Message2ndAttempt>'
-
-	Examples:
-		| Scenario      | Login           | FirstName | LastName | Password   | ConfirmPassword | Message                    | Message2ndAttempt                            |
-		| TC01_SameUser | RandomString-10 | 1FN0915   | 1LN0915  | Abcdefgh1! | Abcdefgh1!      | Registration is successful | UsernameExistsException: User already exists |
+	Then User can see the message 'UsernameExistsException: User already exists'

@@ -36,38 +36,30 @@ namespace Test.BuggyCarsRating.Steps
         public void WhenUserEnterUserCredential(Table table)
         {
             dynamic data = table.CreateDynamicInstance();
-            string loginOverride = "";
 
-            //overide Login(for regression)
-            if (data.Login.Contains("RandomString-"))
-            {
-                int length = Int32.Parse(data.Login.Split('-')[1]);
-                loginOverride = _codeHelper.RandomString("AlphaNumeric", length);
-            }
-            else
-            {
-                loginOverride = data.Login;
-            }
+            // Get login data - generate random string if string contains "RandomString-"
+            string loginOverride = _codeHelper.GetDataInput(data.Login, "AlphaNumeric");
 
             // Enter User Credential(Login, First Name, Last Name, Password)
             _registerPage.EnterLoginFirstNameLastName(loginOverride, data.FirstName, data.LastName);
             _registerPage.EnterPasswordConfirmPassword(data.Password, data.ConfirmPassword);
 
-            _scenarioContext.Set(loginOverride, "login");
-            _scenarioContext.Set(data.FirstName, "firstname");
-            _scenarioContext.Set(data.LastName, "lastname");
-            _scenarioContext.Set(data.Password, "password");
-            _scenarioContext.Set(data.ConfirmPassword, "confirmpassword");
+            // store credentials to scenarioContext
+            _scenarioContext.Set(loginOverride, "reglogin");
+            _scenarioContext.Set(data.FirstName, "regfirstname");
+            _scenarioContext.Set(data.LastName, "reglastname");
+            _scenarioContext.Set(data.Password, "regpassword");
+            _scenarioContext.Set(data.ConfirmPassword, "regconfirmpassword");
         }
 
         [When(@"User enter the same user")]
         public void WhenUserEnterTheSameUser()
         {
-            string login = _scenarioContext.Get<string>("login");
-            string firstName = _scenarioContext.Get<string>("firstname");
-            string lastName = _scenarioContext.Get<string>("lastname");
-            string password = _scenarioContext.Get<string>("password");
-            string confirmPassword = _scenarioContext.Get<string>("confirmpassword");
+            string login = _scenarioContext.Get<string>("reglogin");
+            string firstName = _scenarioContext.Get<string>("regfirstname");
+            string lastName = _scenarioContext.Get<string>("reglastname");
+            string password = _scenarioContext.Get<string>("regpassword");
+            string confirmPassword = _scenarioContext.Get<string>("regconfirmpassword");
 
             // Enter User Credential(Login, First Name, Last Name, Password)
             _registerPage.EnterLoginFirstNameLastName(login, firstName, lastName);

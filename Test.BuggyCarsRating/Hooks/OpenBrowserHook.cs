@@ -30,9 +30,9 @@ namespace Test.BuggyCarsRating.Hooks
                     _driverContext.browser = new Browser(_driverContext);
                     break;
                 case BrowserType.FireFox:
-                    //FirefoxOptions option2 = new FirefoxOptions();
-                    //option2.AddArguments("start-maximized");
-                    //option2.AddArguments("--disable-gpu");
+                    FirefoxOptions option2 = new FirefoxOptions();
+                    option2.AddArguments("start-maximized");
+                    option2.AddArguments("--disable-gpu");
                     new DriverManager().SetUpDriver(new FirefoxConfig());
                     _driverContext.Driver = new FirefoxDriver();
                     _driverContext.browser = new Browser(_driverContext);
@@ -41,7 +41,7 @@ namespace Test.BuggyCarsRating.Hooks
                     ChromeOptions option = new ChromeOptions();
                     option.AddArguments("start-maximized");
                     option.AddArguments("--disable-gpu");
-                    option.AddArguments("--headless");
+                    //option.AddArguments("--headless");
                     new DriverManager().SetUpDriver(new ChromeConfig());
                     _driverContext.Driver = new ChromeDriver(option);
                     _driverContext.browser = new Browser(_driverContext);
