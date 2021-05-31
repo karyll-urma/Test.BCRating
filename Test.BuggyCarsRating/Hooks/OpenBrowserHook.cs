@@ -41,7 +41,7 @@ namespace Test.BuggyCarsRating.Hooks
                     ChromeOptions option = new ChromeOptions();
                     option.AddArguments("start-maximized");
                     option.AddArguments("--disable-gpu");
-                    //option.AddArguments("--headless");
+                    option.AddArguments("--headless");
                     new DriverManager().SetUpDriver(new ChromeConfig());
                     _driverContext.Driver = new ChromeDriver(option);
                     _driverContext.browser = new Browser(_driverContext);
