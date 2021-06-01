@@ -18,12 +18,11 @@ namespace Test.BuggyCarsRating.Helpers
         }
 
         IWebElement nextButton => _driverContext.Driver.FindElement(By.XPath("//input[@class = 'form-control input-xs ng-untouched ng-pristine ng-valid']/following-sibling::a[@class = 'btn']"));
+        IWebElement pageIndicator => _driverContext.Driver.FindElement(By.XPath($"//my-pager//div[@class = 'pull-xs-right']"));
 
         // Find and navigate to make model
         public void FindAndNavigateToModel(string model)
-        {
-            IWebElement pageIndicator = _driverContext.Driver.FindElement(By.XPath($"//my-pager//div[@class = 'pull-xs-right']"));
-            
+        {                        
             // Get current and max page
             int currentPage = Int32.Parse(pageIndicator.Text.Trim().Split("of")[0].Split("page")[1].Trim());
             int maxPage = Int32.Parse(pageIndicator.Text.Trim().Split("of")[1]);
