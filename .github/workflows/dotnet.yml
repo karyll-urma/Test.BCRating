@@ -1,4 +1,14 @@
-name: .NET
+name: '$(Date:yyyyMMdd)$BuggyCarsRating'
+
+parameters:
+  - name:Tags
+    displayName: Tags
+    type: string
+    default: NoDefects
+    values:
+	-NoDefects
+	-AllScripts
+        -WithDefects
 
 on:
   push:
@@ -22,4 +32,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal --filter TestCategory=NoDefects
+      run: dotnet test --no-build --verbosity normal --filter TestCategory=${{parameters.Tags}}
