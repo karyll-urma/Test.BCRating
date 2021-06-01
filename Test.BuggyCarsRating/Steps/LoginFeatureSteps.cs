@@ -66,6 +66,26 @@ namespace Test.BuggyCarsRating.Steps
             Assert.IsTrue(_homePage.IsInvalidUserPasswordDisplayed(), "=====> Homepage not displayed.");
         }
 
+        [When(@"User logout from the application")]
+        public void WhenUserLogoutFromTheApplication()
+        {
+            _homePage.ClickLogout();
+        }
+
+        [Then(@"User successfully logged out")]
+        public void ThenUserSuccessfullyLoggedOut()
+        {
+            Assert.IsFalse(_homePage.IsLogoutDisplayed(), "=====> User " + _scenarioContext.Get<string>("login") + " not successfully logged out.");
+        }
+
+        [Given(@"User successfully login to the application")]
+        public void GivenUserSuccessfullyLoginToTheApplication()
+        {
+            WhenUserLoginInTheApplication();
+            ThenUserSuccessfullyLoggedIn();
+        }
+
+
 
     }
 }

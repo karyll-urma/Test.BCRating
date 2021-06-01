@@ -67,7 +67,7 @@ namespace Test.BuggyCarsRating.Pages
             BtnCancelRegPg.Click();
         }
 
-        // Return Result Alert
+        // Return Alerts
         public string TextResultAlert()
         {
             try

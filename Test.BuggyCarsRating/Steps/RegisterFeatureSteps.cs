@@ -55,6 +55,7 @@ namespace Test.BuggyCarsRating.Steps
         [When(@"User enter the same user")]
         public void WhenUserEnterTheSameUser()
         {
+            // fetch credentials from scenarioContext
             string login = _scenarioContext.Get<string>("reglogin");
             string firstName = _scenarioContext.Get<string>("regfirstname");
             string lastName = _scenarioContext.Get<string>("reglastname");
@@ -113,6 +114,18 @@ namespace Test.BuggyCarsRating.Steps
             {
                 Assert.Fail("=====> No alert message displayed.");
             }
+        }
+
+        // simplify registration - prerequisite purposes only
+        [Given(@"User successfully register to the application")]
+        public void GivenUserSuccessfullyRegisterToTheApplication(Table table)
+        {
+            dynamic data = table.CreateDynamicInstance();
+
+            WhenUserSelectRegisterButton();
+            WhenUserEnterUserCredential(table);
+            WhenUserClickRegisterButton();
+            ThenUserCanSeeTheMessage(data.Message);
         }
 
     }

@@ -44,11 +44,10 @@ namespace Test.BuggyCarsRating.Helpers
             {
                 return _driverContext.Driver.FindElement(By.XPath($"//{node}[contains(text(),'{text}')]")).Displayed;               
             }
-            catch (NoSuchElementException e)
+            catch (NoSuchElementException)
             {
                 return false;
             }
-        }
-
+        }    
     }
 }

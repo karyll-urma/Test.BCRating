@@ -43,24 +43,29 @@ Scenario Outline: S03_Login_EmptyCredentials
 @NoDefects
 Scenario: S04_Login_NewlyRegisteredUser
 	Given User navigate to application
-	When User select Register button
-	And User enter user credential
-		| Login           | FirstName | LastName | Password   | ConfirmPassword | 
-		| RandomString-10 | 1FN0915   | 1LN0915  | Abcdefgh1! | Abcdefgh1!      | 
-	And User click register button
-	Then User can see the message 'Registration is successful'
+	And User successfully register to the application
+		| Login           | FirstName | LastName | Password   | ConfirmPassword | Message                    |
+		| RandomString-10 | 1FN0915   | 1LN0915  | Abcdefgh1! | Abcdefgh1!      | Registration is successful |
 	When User login in the application
 	Then User successfully logged in
 
 @mytag
 Scenario: S05_Register_Login_HomeScreenValidation
 	Given User navigate to application
-	When User select Register button
-	And User enter user credential
-		| Login           | FirstName | LastName | Password   | ConfirmPassword |
-		| RandomString-10 | 1FN0915   | 1LN0915  | Abcdefgh1! | Abcdefgh1!      | 
-	And User click register button
-	Then User can see the message 'Registration is successful'
+	And User successfully register to the application
+		| Login           | FirstName | LastName | Password   | ConfirmPassword | Message                    |
+		| RandomString-10 | 1FN0915   | 1LN0915  | Abcdefgh1! | Abcdefgh1!      | Registration is successful |
 	When User login in the application
 	Then User successfully logged in
 	And User able to see homepage
+
+@mytag
+Scenario: S06_Logout
+	Given User navigate to application
+	When User login using credentials
+		| Login     | Password     |
+		| Login0915 | September15! |
+	Then User successfully logged in
+	And User able to see homepage
+	When User logout from the application
+	Then User successfully logged out

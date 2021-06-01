@@ -16,6 +16,8 @@ namespace Test.BuggyCarsRating.Base
         public LoginPage _loginPage;
         public RegisterPage _registerPage;
         public CodeHelper _codeHelper;
+        public CarModelPage _carModelPage;
+        //public NavigationHelper _navigationHelper;
         public ScenarioContext _scenarioContext;
         public TestContext _testContext;
 
@@ -26,7 +28,9 @@ namespace Test.BuggyCarsRating.Base
             _registerPage = new RegisterPage(_driverContext);
             _homePage = new HomePage(_driverContext);
             _codeHelper = new CodeHelper(_driverContext);
-            
+            _carModelPage = new CarModelPage(_driverContext);
+            //_navigationHelper = new NavigationHelper(_driverContext);
+
             this._scenarioContext = scenarioContext;
             this._testContext = testContext;
         }

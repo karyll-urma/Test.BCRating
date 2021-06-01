@@ -30,22 +30,23 @@ namespace Test.BuggyCarsRating.Hooks
                     _driverContext.browser = new Browser(_driverContext);
                     break;
                 case BrowserType.FireFox:
-                    FirefoxOptions option2 = new FirefoxOptions();
-                    option2.AddArguments("start-maximized");
-                    option2.AddArguments("--disable-gpu");
+                    FirefoxOptions optionff = new FirefoxOptions();
+                    optionff.AddArguments("start-maximized"); 
+                    optionff.AddArguments("--disable-gpu");
+                    optionff.AddArguments("--headless");
                     new DriverManager().SetUpDriver(new FirefoxConfig());
-                    _driverContext.Driver = new FirefoxDriver();
+                    _driverContext.Driver = new FirefoxDriver(optionff);
                     _driverContext.browser = new Browser(_driverContext);
                     break;
                 case BrowserType.Chrome:
-                    ChromeOptions option = new ChromeOptions();
-                    option.AddArguments("start-maximized");
-                    option.AddArguments("--disable-gpu");
-                    option.AddArguments("--headless");
+                    ChromeOptions optionc = new ChromeOptions();
+                    optionc.AddArguments("start-maximized");
+                    optionc.AddArguments("--disable-gpu");
+                    //optionc.AddArguments("--headless");
                     new DriverManager().SetUpDriver(new ChromeConfig());
-                    _driverContext.Driver = new ChromeDriver(option);
+                    _driverContext.Driver = new ChromeDriver(optionc);
                     _driverContext.browser = new Browser(_driverContext);
-                    _driverContext.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
+                    _driverContext.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
                     break;
             }
         }
