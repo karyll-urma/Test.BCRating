@@ -1,7 +1,7 @@
 ﻿Feature: LoginFeature
 	This feature is to test the Login functionality of the application.
 
-@mytag
+@NoDefects
 Scenario Outline: S01_Login_Valid
 	Given User navigate to application
 	When User login using credentials
@@ -14,7 +14,7 @@ Scenario Outline: S01_Login_Valid
 		| Scenario            | Login     | Password     |
 		| TC01_RegisteredUser | Login0915 | September15! |
 
-@mytag
+@NoDefects
 Scenario Outline: S02_Login_Invalid
 	Given User navigate to application
 	When User login using credentials
@@ -27,7 +27,7 @@ Scenario Outline: S02_Login_Invalid
 		| TC01_UnregisteredUser | Unregistered | test      |
 		| TC02_SwapInput        | September15! | Login0915 |
 
-@mytag
+@NoDefects
 Scenario Outline: S03_Login_EmptyCredentials
 	Given User navigate to application
 	When User login using credentials
