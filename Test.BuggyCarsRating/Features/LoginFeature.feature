@@ -40,7 +40,7 @@ Scenario Outline: S03_Login_EmptyCredentials
 		| TC01_EmptyLogin    |           | September15! |
 		| TC02_EmptyPassword | Login0915 |              |
 
-@mytag
+@NoDefects
 Scenario: S04_Login_NewlyRegisteredUser
 	Given User navigate to application
 	When User select Register button
