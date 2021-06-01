@@ -45,7 +45,7 @@ namespace Test.BuggyCarsRating.Hooks
                     new DriverManager().SetUpDriver(new ChromeConfig());
                     _driverContext.Driver = new ChromeDriver(option);
                     _driverContext.browser = new Browser(_driverContext);
-                    _driverContext.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
+                    _driverContext.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
                     break;
             }
         }
