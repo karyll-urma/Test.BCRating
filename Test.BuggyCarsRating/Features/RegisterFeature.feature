@@ -1,7 +1,6 @@
 ﻿Feature: RegisterFeature
 	This feature is to test the Registration functionality of the application.
 
-@NoDefects
 Scenario Outline: S01_Registration_ValidCredentials
 	Given User navigate to application
 	When User select Register button
