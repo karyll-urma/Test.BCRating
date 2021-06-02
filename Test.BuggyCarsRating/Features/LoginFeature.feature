@@ -41,7 +41,7 @@ Scenario Outline: S03_Login_EmptyCredentials
 		| TC02_EmptyPassword | Login0915 |              |
 
 @NoDefects
-Scenario: S04_Login_NewlyRegisteredUser
+Scenario: S04_Register_Login_NewlyRegisteredUser
 	Given User navigate to application
 	And User successfully register to the application
 		| Login           | FirstName | LastName | Password   | ConfirmPassword | Message                    |
@@ -49,7 +49,7 @@ Scenario: S04_Login_NewlyRegisteredUser
 	When User login in the application
 	Then User successfully logged in
 
-@mytag
+
 Scenario: S05_Register_Login_HomeScreenValidation
 	Given User navigate to application
 	And User successfully register to the application
@@ -59,7 +59,7 @@ Scenario: S05_Register_Login_HomeScreenValidation
 	Then User successfully logged in
 	And User able to see homepage
 
-@mytag
+@NoDefects
 Scenario: S06_Logout
 	Given User navigate to application
 	When User login using credentials

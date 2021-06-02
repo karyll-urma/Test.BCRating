@@ -19,6 +19,7 @@ namespace Test.BuggyCarsRating.Pages
         IWebElement btnVote => _driverContext.Driver.FindElement(By.XPath("//button[text() = 'Vote!']"));
         IWebElement txtAreaComment => _driverContext.Driver.FindElement(By.XPath("//label[contains(text(),'Your Comment')]/following-sibling::textarea"));
         IWebElement txtVoteCount => _driverContext.Driver.FindElement(By.XPath("//h4[contains(text(),'Votes:')]/strong"));
+        IWebElement linkLogout => _driverContext.Driver.FindElement(By.XPath("//a[contains(text(),'Logout')]"));
 
         // Add comment and click vote
         public void AddCommentAndVote(string comment)
@@ -47,5 +48,32 @@ namespace Test.BuggyCarsRating.Pages
         {
             return _customControlHelper.IsElementDisplayed("p", "Thank you for your vote!");
         }
+
+        // Return true if Vote button exists
+        public bool IsVoteButtonExist()
+        {
+            return _customControlHelper.IsElementDisplayed("button", "Vote!");
+        }
+
+        // Click logout
+        public void ClickLogout()
+        {
+            linkLogout.Click();
+            
+        }
+
+        // Return true if logout exist
+        public bool IsLogoutSuccessful()
+        {
+            return _customControlHelper.IsElementDisplayed("a", "Logout");
+        }
+
+        // Return true if vote count exist
+        public bool IsVoteCountExist()
+        {
+            return _customControlHelper.IsElementDisplayed("h4", "Votes:");
+        }
+
+
     }
 }

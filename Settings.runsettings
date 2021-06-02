@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RunSettings>
+	<TestRunParameters>
+		<Parameter name="baseUrl" value="https://buggy.justtestit.org/"/>
+		<Parameter name="browser" value="Chrome"/>
+		<Parameter name="isHeadless" value="true"/>
+		<Parameter name="implicitWait" value="3"/>
+	</TestRunParameters>
+</RunSettings>

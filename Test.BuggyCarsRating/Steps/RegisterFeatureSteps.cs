@@ -20,7 +20,7 @@ namespace Test.BuggyCarsRating.Steps
         [Given(@"User navigate to application")]
         public void GivenUserNavigateToApplication()
         {
-            _driverContext.Driver.Navigate().GoToUrl("https://buggy.justtestit.org/");
+            _driverContext.Driver.Navigate().GoToUrl(Settings.BaseUrl);
         }
 
         [When(@"User select Register button")]

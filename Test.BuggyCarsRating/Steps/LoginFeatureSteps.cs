@@ -19,7 +19,7 @@ namespace Test.BuggyCarsRating.Steps
         public void WhenUserLoginUsingCredentials(Table table)
         {
             dynamic data = table.CreateDynamicInstance();
-
+      
             // Enter Login and Password, then Click login.
             _loginPage.EnterLoginAndPassword(data.Login, data.Password);
             _loginPage.ClickLogin();

@@ -54,7 +54,7 @@ namespace Test.BuggyCarsRating.Pages
         }
 
         // Navigate to make model
-        public void NavigateToMakeModel(string make, string model)
+        public bool NavigateToMakeModel(string make, string model)
         {
             // Go to homepage
             linkBuggyRating.Click();
@@ -67,7 +67,8 @@ namespace Test.BuggyCarsRating.Pages
             _navigationHelper.FindAndNavigateToModel(model);
 
             // Verify if correct make
-            
+            return _customControlHelper.IsElementDisplayed("h4", make);
+
         }
     }
 }

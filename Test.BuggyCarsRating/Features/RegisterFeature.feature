@@ -1,7 +1,7 @@
 ﻿Feature: RegisterFeature
 	This feature is to test the Registration functionality of the application.
 
-@mytag
+@NoDefects
 Scenario Outline: S01_Registration_ValidCredentials
 	Given User navigate to application
 	When User select Register button
@@ -52,6 +52,7 @@ Scenario Outline: S02_Registration_EmptyCredentials_WorkAround
 		| TC04_EmptyPassword        | RandomString-10 | 1FN0915   | 1LN0915  |            | Abcdefgh1!      | Password is required   |
 		| TC05_EmptyConfirmPassword | RandomString-10 | 1FN0915   | 1LN0915  | Abcdefgh1! |                 | Passwords do not match |
 
+@NoDefects
 Scenario Outline: S03_Registration_PasswordMinCriteriaNotMet
 	Given User navigate to application
 	When User select Register button
@@ -68,6 +69,7 @@ Scenario Outline: S03_Registration_PasswordMinCriteriaNotMet
 		| TC03_PasswordWithoutSpecialChar | RandomString-10 | 1FN0915   | 1LN0915  | Abcdefg1   | Abcdefg1        | Password did not conform with policy: Password must have symbol characters  |
 		| TC04_PasswordWithoutNumeric     | RandomString-10 | 1FN0915   | 1LN0915  | Abcdefg!   | Abcdefg!        | Password did not conform with policy: Password must have numeric characters |
 
+@NoDefects
 Scenario: S04_Registration_SameUserTwice
 	Given User navigate to application
 	When User select Register button
