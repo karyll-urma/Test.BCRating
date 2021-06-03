@@ -17,7 +17,7 @@ namespace Test.BuggyCarsRating.Helpers
         //Create a method to write text in a a log file
         public static void CreateLogFile()
         {
-            string dir = @"C:\TestAutomationLogs\";
+            string dir = @"C:\Temp\Test Reports\TestAutomationLogs\";
             if (Directory.Exists(dir))
             {
                 _streamw = File.AppendText(dir + _logFileName + ".log");

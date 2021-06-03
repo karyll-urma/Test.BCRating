@@ -1,26 +1,49 @@
-#Buggy Cars Rating
-##Project Description
-This project will test the existing functionality of Buggy Cars Rating. This includes system tests and regression test of the features such as Registration, Login, Logout and Voting. The project aims to benefit the testers/team in terms of execution time and accuracy.
+# Buggy Cars Rating
 
-##Build Status##
-Repository is currently sitting at GitHub https://github.com/karyll-urma/Test.BCRating
-Build status is currently passing as below. Scripts running on the workflow are scripts without defect. This can be changed based on project requirements
+## Project Description
+This project will test the existing functionality of Buggy Cars Rating. This includes system and regression test of the features such as Registration, Login, Logout and Voting. The project aims to benefit the testers/team in terms of execution time, accuracy and reducing manual effort.
 
-##Application##
-Screenshot of the app
+## Build Status
+Repository is currently at GitHub https://github.com/karyll-urma/Test.BCRating
+
+Build status is currently passing. Scripts running on the workflow are scripts without defect. This can be changed based on project/teams requirements
+
+## Application under test
+
+https://buggy.justtestit.org/
  
-##Technology/Framework used##
-Technology used: C#, NUnit, .Net 5.0
-Framework: Page object model, BDD specflow
+## Technology/Framework
 
-##Installation##
+Framework: .Net 5.0
 
-##Tests##
+Test Framework: NUnit
+
+Model: Behavioral Driven Development – Specflow
+
+Tools: Visual Studio C# 
+
+## Tests
 Current Test status:
+
 Feature files: 3
+
 Number of test cases: 34
-Passed:
-Failed:
+
+Passed: 24
+
+Failed: 10 (with defects)
 
 
-##How to use##
+## How to use
+Step 1: Go to github repository link and clone 
+
+Step 2: Open solution: Test.BuggyCarsRating.sln
+
+Step 3 : Setup runsettings file
+Go to Test>Configure Run Setting>Select Solution Wide runsettings File
+and
+Select Settings.runsettings
+
+Step 4: Clean and Build the solution
+
+Step 5: All set to run scripts.

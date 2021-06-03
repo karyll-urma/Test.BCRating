@@ -55,6 +55,7 @@ namespace Test.BuggyCarsRating.Hooks
                     {
                         optionff.AddArguments("--headless");
                     }
+
                     new DriverManager().SetUpDriver(new FirefoxConfig());
                     _driverContext.Driver = new FirefoxDriver(optionff);
                     _driverContext.browser = new Browser(_driverContext);
