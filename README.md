@@ -12,6 +12,7 @@ Screenshot of the app
  
 ## Technology/Framework used
 Technology used: C#, NUnit, .Net 5.0
+
 Framework: Page object model, BDD specflow
 
 ## Installation
