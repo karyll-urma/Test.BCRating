@@ -19,9 +19,13 @@ Framework: Page object model, BDD specflow
 
 ## Tests
 Current Test status:
+
 Feature files: 3
+
 Number of test cases: 34
+
 Passed:
+
 Failed:
 
 
