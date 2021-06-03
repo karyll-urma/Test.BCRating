@@ -47,3 +47,6 @@ Select Settings.runsettings
 Step 4: Clean and Build the solution
 
 Step 5: All set to run scripts.
+
+Step 6: After executing,extent report will be created on your local temp folder
+C:\Temp\Test Reports

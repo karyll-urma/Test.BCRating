@@ -1,4 +1,4 @@
-name: '$(Date:yyyyMMdd)$BuggyCarsRating'
+name: 'BuggyCarsRating Workflow'
 
 on:
   push:
