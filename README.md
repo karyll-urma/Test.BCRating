@@ -5,6 +5,7 @@ This project will test the existing functionality of Buggy Cars Rating. This inc
 
 ## Build Status
 Repository is currently sitting at GitHub https://github.com/karyll-urma/Test.BCRating
+
 Build status is currently passing as below. Scripts running on the workflow are scripts without defect. This can be changed based on project requirements
 
 ## Application
