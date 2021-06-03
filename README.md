@@ -1,7 +1,7 @@
 # Buggy Cars Rating
 
 ## Project Description
-This project will test the existing functionality of Buggy Cars Rating. This includes system tests and regression test of the features such as Registration, Login, Logout and Voting. The project aims to benefit the testers/team in terms of execution time and accuracy.
+This project will test the existing functionality of Buggy Cars Rating. This includes system tests and regression test of the features such as Registration, Login, Logout and Voting. The project aims to benefit the testers/team in terms of execution time, accuracyand reducing manual effort.
 
 ## Build Status
 Repository is currently sitting at GitHub https://github.com/karyll-urma/Test.BCRating
