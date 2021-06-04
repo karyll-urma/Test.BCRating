@@ -4,6 +4,9 @@
 This project will test the existing functionality of Buggy Cars Rating. This includes system and regression test of the features such as Registration, Login, Logout and Voting. The project aims to benefit the testers/team in terms of execution time, accuracy and reducing manual effort.
 
 ## Build Status
+
+[![BuggyCarsRating Workflow](https://github.com/karyll-urma/Test.BCRating/actions/workflows/dotnet.yml/badge.svg)](https://github.com/karyll-urma/Test.BCRating/actions/workflows/dotnet.yml)
+
 Repository is currently at GitHub https://github.com/karyll-urma/Test.BCRating
 
 Build status is currently passing. Scripts running on the workflow are scripts without defect. This can be changed based on project/teams requirements
@@ -18,7 +21,7 @@ Framework: .Net 5.0
 
 Test Framework: NUnit
 
-Model: Behavioral Driven Development – Specflow
+Model: Behavioral Driven Development â€“ Specflow
 
 Tools: Visual Studio C# 
 
